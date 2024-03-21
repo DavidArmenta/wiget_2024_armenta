@@ -27,7 +27,7 @@ class _HomeView extends StatelessWidget {
   }
 
   Widget getMenuList (context,index)=>
-         CustomListTitle(menuItem: appMenuItems[index]);
+      CustomListTitle(menuItem: appMenuItems[index]);
 }
 
 

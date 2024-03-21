@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: FilledButton(
-            onPressed:(){
-            } ,child: 
-            const Text('hola '),
-          )
-        ),
-        ),
-      title: 'Flutter Demo',
-      
-      
-    );
-  }
+const colorList = <Color>[
+  Colors.yellowAccent,
+  Colors.orange,
+  Colors.deepOrange,
+  Colors.red,
+  Colors.brown,
+  Colors.amberAccent,
+  Colors.blueGrey,
+  Colors.blueAccent
+];
+
+class Apptheme{
+  final int selectedColor;
+
+  Apptheme({required this.selectedColor})
+  :assert(selectedColor>=0 && selectedColor<=colorList.length,
+          "El valor seleccionado no esta en el rango de la lista: 0 - ${colorList.length - 1}");
+
+  ThemeData getTheme() => ThemeData(
+    useMaterial3: true,
+    colorSchemeSeed: colorList[selectedColor],
+    appBarTheme: const AppBarTheme(centerTitle:false)
+  );
+
 }
