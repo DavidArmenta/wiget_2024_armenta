@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wigets_2024_1_armenta/config/menu/menu_items.dart';
 
 class CustomListTitle extends StatelessWidget {
@@ -11,15 +12,21 @@ class CustomListTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ final colors = Theme.of(context).colorScheme;
     return ListTile(
       leading: Icon(
         menuItem.icon,
-        ),
-        trailing: const Icon(Icons.arrow_circle_right_outlined),
+        color: colors.primary,
+      ),
+      trailing: Icon(
+        Icons.arrow_forward_ios_outlined,
+        color: colors.primary,
+      ),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subtitle),
-      onTap: () => {
-        print("Llamado de la liga para ir a ${menuItem.title} en la liga de ${menuItem.link}")
-      },);
+      onTap: () {
+        context.pushNamed(menuItem.nameScreen);
+      },
+    );
   }
 }

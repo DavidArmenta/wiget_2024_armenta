@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wigets_2024_1_armenta/config/theme/app_theme.dart';
+import 'package:wigets_2024_1_armenta/config/routers/router.dart';
 import 'package:wigets_2024_1_armenta/presentation/screens/home/home.dart';
+
 
 
 void main() {
@@ -12,8 +14,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       theme: Apptheme(selectedColor: 3).getTheme(),
-      home: const HomeScreen());
+      routerConfig: appRouter,
+      );
   }
 }
