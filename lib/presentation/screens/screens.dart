@@ -1,0 +1,11 @@
+export  'package:wigets_2024_1_armenta/presentation/screens/infititescroll/InfinitescrollScreen.dart';
+export  'package:wigets_2024_1_armenta/presentation/screens/animated/AnimatedScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/buttons/buttonScreen.dart';
+export  'package:wigets_2024_1_armenta/presentation/screens/cards/CardScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/counter_river/Counter_riverScreen.dart';
+export  'package:wigets_2024_1_armenta/presentation/screens/home/home.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/progress/ProgressScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/snackbar/SnackbarScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/theme_changer/theme_changerScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/ui_controls/Ui_controlsScreen.dart';
+export 'package:wigets_2024_1_armenta/presentation/screens/tutorial/TutorialScreen.dart';
