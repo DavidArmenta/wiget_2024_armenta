@@ -10,17 +10,23 @@ const colorList = <Color>[
   Colors.blueAccent
 ];
 
-class Apptheme{
-  final int selectedColor;
+class AppTheme{
 
-  Apptheme({required this.selectedColor})
+  final int selectedColor;
+  final bool isDarkMode;
+
+  AppTheme({ this.selectedColor=0, this.isDarkMode= false,})
   :assert(selectedColor>=0 && selectedColor<=colorList.length,
           "El valor seleccionado no esta en el rango de la lista: 0 - ${colorList.length - 1}");
 
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
+    brightness: isDarkMode ? Brightness.dark:Brightness.light,
     colorSchemeSeed: colorList[selectedColor],
-    appBarTheme: const AppBarTheme(centerTitle:false)
-  );
-
+    appBarTheme: const AppBarTheme(centerTitle:false) );
+  
+AppTheme copyWith({int? selectedColor, bool? isDarkMode}) => AppTheme(
+        selectedColor: selectedColor ?? this.selectedColor,
+        isDarkMode: isDarkMode ?? this.isDarkMode,
+      );
 }
